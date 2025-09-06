@@ -1,0 +1,207 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background Video */
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Dark Overlay for readability */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+/* Page Content */
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  background: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.navbar nav a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #ffdd57;
+}
+
+.hero h1 {
+  margin: 20px 0 5px;
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.hero p {
+  color: #ddd;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Layout */
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 1200px;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Blog Content */
+.content {
+  flex: 2;
+}
+
+.post {
+  display: flex;
+  background: rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.post-img {
+  width: 120px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding: 20px;
+}
+
+.post-body {
+  padding: 15px;
+}
+
+.post h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.meta {
+  color: #777;
+  font-size: 12px;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.contact-card {
+  background: #007bff;
+  color: #fff;
+}
+
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+}
+
+.contact-card button {
+  width: 100%;
+  padding: 8px;
+  background: #fff;
+  color: #007bff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-card button:hover {
+  background: #f0f0f0;
+}
+
+/* Footer */
+footer {
+  background: rgba(51,51,51,0.9);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .post {
+    flex-direction: column;
+  }
+
+  .post-img {
+    width: 100%;
+    text-align: center;
+  }
+}

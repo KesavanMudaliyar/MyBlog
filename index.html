@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genzee Tech$Blog</title>
+  <link rel="stylesheet" href="b1.css">
+</head>
+<body>
+  <!-- Canvas for the dynamic background -->
+  <canvas id="dynamic-bg"></canvas>
+
+  <!-- Dark Overlay (for hero) -->
+  <div class="overlay"></div>
+
+  <div class="page-content">
+    <!-- Header with Navigation and Hero -->
+    <header>
+      <div class="navbar">
+        <h2>Genzee Tech$Blog</h2>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <h1>Welcome to Genzee Tech$Blog</h1>
+        <p>Exploring Technology, Design, and Creativity</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="content">
+        <!-- Blog Cards Start -->
+        <section class="blog-container">
+          
+          <!-- Blog Post 1 -->
+          <article class="blog-card">
+            <img src="media/security-team.jpg" alt="Cybersecurity Team">
+            <div class="blog-content">
+              <h2>Is a Security Baseline Enough for Open-Source Software?</h2>
+              <p class="meta">Published on June 13, 2025 by Jack M. Germain</p>
+              <p><strong>Tags:</strong> Technology, Security, Open Source</p>
+              <p><strong>Categories:</strong> Cybersecurity, Programming</p>
+              <p>
+                Open-source software has become the bedrock of digital infrastructure. Security baselines define minimum controls but quickly become outdated. Experts recommend moving beyond baselines with continuous monitoring, penetration testing, SBOMs, dependency tracking, transparent disclosures, and resilient CI pipelines.
+              </p>
+              <a href="https://www.linuxinsider.com/story/is-a-security-baseline-enough-for-open-source-software-177560.html" target="_blank" class="read-more">
+                Read More
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Post 2 -->
+          <article class="blog-card">
+            <img src="GoogleIO_2K-LOOP.gif" alt="IO Connect logo">
+            <div class="blog-content">
+              <h2>Google I/O Connect India 2025: Empowering Developers with AI</h2>
+              <p class="meta">Published on July 23, 2025 by Google India Team</p>
+              <p><strong>Tags:</strong> AI &amp; ML, Android, Google Cloud, Developers</p>
+              <p><strong>Categories:</strong> Company News, Technology</p>
+              <p>
+                Google introduced Gemini 2.5 Flash-Lite, localized model access, Gemma 3n, AI-driven Firebase Studio updates, and major developer training. Enhanced AI workflow and demos position Indian devs for global innovation leadership.
+              </p>
+              <a href="https://blog.google/intl/en-in/company-news/google-io-connect-india-2025-empowering-developers-with-ai-to-lead-indias-ambitions/" target="_blank" class="read-more">
+                Read More
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Post 3 -->
+          <article class="blog-card">
+            <img src="media/workplace-creativity.jpeg" alt="Workplace creativity">
+            <div class="blog-content">
+              <h2>Resolving the Clash Between Creativity and Effectiveness in the Workplace</h2>
+              <p class="meta">Published on November 26, 2021 by Linda Naiman</p>
+              <p><strong>Tags:</strong> Creativity, Leadership, Innovation</p>
+              <p><strong>Categories:</strong> Management, Workplace Culture</p>
+              <p>
+                Harvard's Teresa Amabile highlights that traditional management suppresses creativity. Research shows creative cultures drive growth and talent. Leadership must balance innovation and effectiveness by fostering collaboration and experimentation.
+              </p>
+              <a href="https://www.creativityatwork.com/resolve-clash-between-creativity-effectiveness-workplace/" target="_blank" class="read-more">
+                Read More
+              </a>
+            </div>
+          </article>
+        </section>
+        <!-- Blog Cards End -->
+      </div>
+
+      <!-- Sidebar for About, Topics, and Contact -->
+      <aside class="sidebar">
+        <div class="card">
+          <h3>About the Blogger</h3>
+          <p>Hi, I'm Kesavan Mudaliyar. A passionate blogger exploring technology, design and creativity.</p>
+        </div>
+        <div class="card">
+          <h3>Welcome to Genzee Tech$Blog</h3>
+          <p>We provide insights into emerging technologies, contemporary design practices, and innovative solutions.</p>
+        </div>
+        <div class="card">
+          <h3>Popular Topics</h3>
+          <ul>
+            <li>Technology</li>
+            <li>Cybersecurity</li>
+            <li>Artificial Intelligence and Machine Learning</li>
+            <li>Startups & Innovations</li>
+            <li>Virtual Reality & AR</li>
+            <li>Web Development</li>
+            <li>UI/UX Design</li>
+            <li>Programming</li>
+            <li>Cloud Computing</li>
+            <li>Data Science</li>
+          </ul>
+        </div>
+        <div class="card contact-card">
+          <h3>Contact Me</h3>
+          <div class="subscribe">
+            <p>Subscribe to Updates</p>
+            <input type="email" id="email" placeholder="Your Email">
+            <button id="subscribe-btn">Subscribe</button>
+          </div>
+          <div class="message">
+            <p>Send Me a Message</p>
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button id="send-message-btn">Send Message</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Genzee Tech$Blog. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="b1.js"></script>
+</body>
+</html>
