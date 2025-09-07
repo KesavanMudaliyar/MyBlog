@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* General Reset */
         * {
@@ -47,7 +48,7 @@
 
         /* Mobile menu button */
         .mobile-menu-btn {
-            display: none;
+            display: none; /* Hidden by default */
             position: fixed;
             top: 20px;
             right: 20px;
@@ -480,7 +481,7 @@
         }
 
         /* Footer */
-        footer {
+         footer {
             text-align: center;
             padding: 25px 0 20px 0;
             color: #fff;
@@ -491,10 +492,9 @@
             margin-top: 40px;
             position: relative;
             z-index: 2;
-            border-radius: 12px 12px 0 0;
+            border-radius: 6px 6px 0 0;
             backdrop-filter: blur(10px);
         }
-
         /* Page sections */
         .page-section {
             display: none;
@@ -573,7 +573,7 @@
             backdrop-filter: blur(10px);
         }
         
-        .contact-form h2 {
+        .contact-form h1 {
             color: #4fc3f7;
             font-size: 2rem;
             margin-bottom: 30px;
@@ -728,6 +728,11 @@
             color: #bbdefb;
             max-width: 700px;
             margin: 0 auto;
+            white-space: normal;
+            word-wrap: break-word;
+            max-width: 90%;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
         .blog-page-content {
@@ -783,6 +788,7 @@
                 border-bottom: 1px solid rgba(79, 195, 247, 0.3);
             }
             
+            /* Show the mobile menu button on smaller screens */
             .mobile-menu-btn {
                 display: flex;
             }
@@ -849,6 +855,50 @@
             .contact-details-toggle + label {
                 display: block;
             }
+
+            .footer {
+                padding: 20px 0 15px 0;
+                font-size: 1rem;
+                letter-spacing: 0.08rem;
+            }
+    
+            .social-links {
+                gap: 15px;
+            }
+    
+            .social-links a {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+            }
+
+            .fab:hover {
+                transform: scale(1.2);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.38);
+            }
+
+            .icon-footer{
+                transition: all 0.60s ease;
+                cursor: pointer;
+                border: 3px solid transparent;
+            }
+
+            .icon-footer:hover {
+                transform: scale(1.18) rotate(8deg);
+                box-shadow: 0 6px 30px rgba(80,120,255,0.5);
+                animation: vibrate 0.3s linear infinite;
+                cursor: pointer;
+            }
+
+            .icon-footer:active {
+                animation: vibrate 0.3s linear infinite;
+                border-style: solid !important;
+                border-color: #3f51b5 !important;
+                transform: scale(1.1) rotate(0deg) !important;
+                box-shadow: 0 0 12px 3px rgba(255, 100, 100, 0.7) !important;
+                transform: scale(1.1) rotate(0deg) !important;
+                background-color: rgba(63, 81, 181, 0.7) !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -882,6 +932,7 @@
             
             .blog-hero p {
                 font-size: 1rem;
+                display:block;
             }
             
             /* Fix blog images on small mobile */
@@ -906,7 +957,28 @@
                 padding: 10px 16px;
                 font-size: 0.9rem;
             }
+
+            .footer {
+                padding: 15px 0 12px 0;
+                font-size: 0.9rem;
+                letter-spacing: 0.05rem;
+            }
+    
+            .footer-content {
+            gap: 12px;
         }
+    
+        .social-links {
+        gap: 12px;
+        margin-top: 8px;
+        }
+    
+        .social-links a {
+            width: 32px;
+            height: 32px;
+            font-size: 1rem;
+        }
+    }
         
         /* Loading spinner */
         .spinner {
@@ -924,6 +996,16 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Vibrate animation */
+        @keyframes vibrate {
+          0% { transform: translate(0px, 0px) rotate(0deg); }
+        20% { transform: translate(-2px, 1px) rotate(-1deg); }
+        40% { transform: translate(-1px, -1px) rotate(1deg); }
+        60% { transform: translate(2px, 1px) rotate(0deg); }
+        80% { transform: translate(1px, -1px) rotate(1deg); }
+        100% { transform: translate(0px, 0px) rotate(0deg); }
+    }
     </style>
 </head>
 <body>
@@ -932,7 +1014,7 @@
     <div class="overlay"></div>
     
     <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn">
+    <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
         <span></span>
         <span></span>
         <span></span>
@@ -964,11 +1046,11 @@
             <!-- Main Content -->
             <main class="container">
                 <!-- Blog Content -->
-                <div class="content">
+                <div class край="content">
                     <div class="blog-container">
                         <!-- Blog Post 1 -->
                         <article class="blog-card" id="blog-card-1">
-                            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Robotics">
+                            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8f крайufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Robotics">
                             <div class="blog-content">
                                 <h2>The Future of AI in Robotics</h2>
                                 <div class="meta">June 15, 2023 | Artificial Intelligence</div>
@@ -983,14 +1065,14 @@
                             <div class="blog-content">
                                 <h2>Quantum Computing Breakthroughs</h2>
                                 <div class="meta">June 10, 2023 | Quantum Tech</div>
-                                <p>Recent advances in quantum computing that are pushing the boundaries of what's possible in data processing and encryption.</p>
-                                <a href="https://www.nature.com/articles/d41586-023-01965-3" target="_blank" class="read-more">Read More</a>
+                                край<p>Recent advances in quantum computing that are pushing the boundaries of what's possible in data processing and encryption.</p>
+                                <a href=" крайhttps://www.nature.com/articles/d41586-023-01965-3" target="_blank" class="read-more">Read More</a>
                             </div>
                         </article>
                         
                         <!-- Blog Post 3 -->
                         <article class="blog-card" id="blog-card-3">
-                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sustainable Tech">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4 край.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlf крайx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sustainable Tech">
                             <div class="blog-content">
                                 <h2>Sustainable Technology Solutions</h2>
                                 <div class="meta">June 5, 2023 | Green Tech</div>
@@ -1005,14 +1087,14 @@
                 <aside class="sidebar">
                     <!-- About Card -->
                     <div class="card" id="about-card">
-                        <h3>About Genzee Tech$Blog</h3>
+                        <h1>About Genzee Tech$Blog</h1>
                         <p>Genzee Tech$Blog is a blog dedicated to exploring the latest innovations in technology, from AI and quantum computing to sustainable tech solutions.</p>
                         <a href="#about" class="nav-link read-more" data-page="about" style="margin-top: 15px; text-align: center;">Learn More</a>
                     </div>
                     
                     <!-- Categories Card -->
                     <div class="card">
-                        <h3>Categories</h3>
+                        <h3> Categories</h3>
                         <ul>
                             <li>Artificial Intelligence</li>
                             <li>Quantum Computing</li>
@@ -1048,7 +1130,7 @@
             <div class="blog-page-content">
                 <div class="blog-container">
                     <!-- Blog Post 1 -->
-                    <article class="blog-card" id="blog-card-1">
+                    <article class="blog-card" id="blog край-card-1">
                         <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Robotics">
                         <div class="blog-content">
                             <h2>The Future of AI in Robotics</h2>
@@ -1065,7 +1147,7 @@
                             <h2>Quantum Computing Breakthroughs</h2>
                             <div class="meta">June 10, 2023 | Quantum Tech</div>
                             <p>Recent months have seen remarkable progress in quantum computing technology. Researchers have achieved new milestones in quantum supremacy, error correction, and qubit stability. These advances bring us closer to practical quantum computers that could revolutionize fields from drug discovery to climate modeling. Learn about the cutting-edge research pushing the boundaries of computation.</p>
-                            <a href="https://www.nature.com/articles/d41586-023-01965-3" target="_blank" class="read-more">Read More</a>
+                            <a href="https://www.nature.com/articles/d41586 край-023-01965-3" target="_blank" class="read-more">Read More</a>
                         </div>
                     </article>
                     
@@ -1082,7 +1164,7 @@
                     
                     <!-- Blog Post 4 -->
                     <article class="blog-card" id="blog-card-4">
-                        <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cybersecurity">
+                        <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1w крайYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cybersecurity">
                         <div class="blog-content">
                             <h2>Next-Gen Cybersecurity Threats</h2>
                             <div class="meta">May 28, 2023 | Cybersecurity</div>
@@ -1143,7 +1225,7 @@
                     <h2>Meet Our Team</h2>
                     <div class="team-grid">
                         <div class="team-member">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Sarah Johnson">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8 крайMHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Sarah Johnson">
                             <h3>Sarah Johnson</h3>
                             <p>Editor-in-Chief</p>
                         </div>
@@ -1166,9 +1248,10 @@
                             <p>Cybersecurity Analyst</p>
                         </div>
                         <div class="team-member">
-                            <img src="photo.jpg" alt="Kesavan Mudaliyar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Kesavan Mudaliyar">
                             <h3>Kesavan Mudaliyar</h3>
-                            <p>UI/UX Designer.</p>
+                            <p>UI/UX Designer</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1244,9 +1327,30 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Genzee Tech$Blog. All rights reserved.</p>
-    </footer>
+ <footer style="background:linear-gradient(90deg,#0178bb 60%, #163147 100%); color:#fff; text-align:center; font-size:1rem; padding:12px 0 6px 0;">
+  <div style="margin-bottom:8px;">© 2025 Genzee Tech$Blog. All rights reserved.</div>
+  <div style="display:flex;justify-content:center;gap:18px;align-items:center;">
+    <a href="https://www.instagram.com/" target="_blank" class="icon-footer" style="border-radius:50%;background:#fff;border:3px solid #ea4c89;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transition:0.3s;">
+      <img src="instagram.jpg" alt="Instagram" style="width:24px;height:24px;object-fit:cover;">
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" class="icon-footer" style="border-radius:50%;background:#fff;border:3px solid #0866ff;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transition:0.3s;">
+      <img src="facebook.jpg" alt="Facebook" style="width:24px;height:24px;object-fit:cover;">
+    </a>
+    <a href="https://www.linkedin.com/" target="_blank" class="icon-footer" style="border-radius:50%;background:#fff;border:3px solid #0a66c2;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transition:0.3s;">
+      <img src="linkedin (1).jpg" alt="LinkedIn" style="width:24px;height:24px;object-fit:cover;">
+    </a>
+    <a href="https://www.pinterest.com/" target="_blank" class="icon-footer" style="border-radius:50%;background:#fff;border:3px solid #bd081c;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transition:0.3s;">
+      <img src="printest.jpg" alt="Pinterest" style="width:24px;height:24px;object-fit:cover;">
+    </a>
+    <a href="https://www.snapchat.com/" target="_blank" class="icon-footer" style="border-radius:50%;background:#fff;border:3px solid #fffc00;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transition:0.3s;">
+      <img src="social.jpg" alt="Snapchat" style="width:24px;height:24px;object-fit:cover;">
+    </a>
+    <a href="https://www.youtube.com/" target="_blank" class="icon-footer" style="border-radius:50%;background:#fff;border:3px solid #d60000;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transition:0.3s;">
+      <img src="youtube.jpg" alt="YouTube" style="width:24px;height:24px;object-fit:cover;">
+    </a>
+  </div>
+</footer>
+
 
     <script>
         // Initialize Vanta.js birds background
@@ -1271,161 +1375,180 @@
             quantity: 4.00
         });
 
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.navbar nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Accessibility attribute toggle
+            const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+        });
+
+        // Page navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageSections = document.querySelectorAll('.page-section');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+                
+                const targetPage = this.getAttribute('data-page');
+                
+                // Hide all pages
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show target page
+                document.getElementById(`${targetPage}-page`).classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+
         // Text animations
         document.addEventListener('DOMContentLoaded', function() {
             // Hero title animation
             const textWrapper = document.querySelector('.ml3');
-            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-            
-            anime.timeline({loop: false})
-                .add({
-                    targets: '.ml3 .letter',
-                    opacity: [0,1],
-                    easing: "easeInOutQuad",
-                    duration: 1000,
-                    delay: (el, i) => 100 * (i+1)
-                });
+            if (textWrapper) {
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                
+                anime.timeline({loop: false})
+                    .add({
+                        targets: '.ml3 .letter',
+                        opacity: [0,1],
+                        easing: "easeInOutQuad",
+                        duration: 1000,
+                        delay: (el, i) => 100 * (i+1)
+                    });
+            }
 
             // Hero subtitle animation
             const textWrapper2 = document.querySelector('.ml16');
-            textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-            
-            anime.timeline({loop: false})
-                .add({
-                    targets: '.ml16 .letter',
-                    translateY: [-100,0],
-                    easing: "easeOutExpo",
-                    duration: 1200,
-                    delay: (el, i) => 30 * i
-                });
-
-            // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navMenu = document.querySelector('.navbar nav');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-
-            // Page navigation
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pageSections = document.querySelectorAll('.page-section');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Close mobile menu if open
-                    mobileMenuBtn.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    
-                    const targetPage = this.getAttribute('data-page');
-                    
-                    // Hide all pages
-                    pageSections.forEach(section => {
-                        section.classList.remove('active');
+            if (textWrapper2) {
+                textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                
+                anime.timeline({loop: false})
+                    .add({
+                        targets: '.ml16 .letter',
+                        translateY: [-100,0],
+                        easing: "easeOutExpo",
+                        duration: 1200,
+                        delay: (el, i) => 30 * i
                     });
-                    
-                    // Show target page
-                    document.getElementById(`${targetPage}-page`).classList.add('active');
-                    
-                    // Scroll to top
-                    window.scrollTo(0, 0);
-                });
-            });
-
-            // Subscribe form
-            const subscribeBtn = document.getElementById('subscribe-btn');
-            const subscribeEmail = document.getElementById('subscribe-email');
-            const subscribeStatus = document.getElementById('subscribe-status');
-            const subscribeSpinner = document.getElementById('subscribe-spinner');
-            
-            subscribeBtn.addEventListener('click', function() {
-                const email = subscribeEmail.value;
-                
-                if (!validateEmail(email)) {
-                    showStatus(subscribeStatus, 'Please enter a valid email address', 'error');
-                    return;
-                }
-                
-                // Show loading spinner
-                subscribeSpinner.style.display = 'block';
-                subscribeBtn.disabled = true;
-                
-                // Simulate backend API call
-                setTimeout(() => {
-                    // Hide spinner
-                    subscribeSpinner.style.display = 'none';
-                    subscribeBtn.disabled = false;
-                    
-                    // Simulate subscription success
-                    showStatus(subscribeStatus, 'Thank you for subscribing!', 'success');
-                    subscribeEmail.value = '';
-                    
-                    // Hide status message after 3 seconds
-                    setTimeout(() => {
-                        subscribeStatus.style.display = 'none';
-                    }, 3000);
-                }, 1500);
-            });
-            
-            // Contact form
-            const contactForm = document.getElementById('contact-form');
-            const contactStatus = document.getElementById('contact-status');
-            const contactSpinner = document.getElementById('contact-spinner');
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
-                
-                if (!name || !email || !subject || !message) {
-                    showStatus(contactStatus, 'Please fill in all fields', 'error');
-                    return;
-                }
-                
-                if (!validateEmail(email)) {
-                    showStatus(contactStatus, 'Please enter a valid email address', 'error');
-                    return;
-                }
-                
-                // Show loading spinner
-                contactSpinner.style.display = 'block';
-                document.querySelector('.submit-btn').disabled = true;
-                
-                // Simulate backend API call
-                setTimeout(() => {
-                    // Hide spinner
-                    contactSpinner.style.display = 'none';
-                    document.querySelector('.submit-btn').disabled = false;
-                    
-                    // Simulate form submission success
-                    showStatus(contactStatus, 'Thank you for your message! We will get back to you soon.', 'success');
-                    contactForm.reset();
-                    
-                    // Hide status message after 5 seconds
-                    setTimeout(() => {
-                        contactStatus.style.display = 'none';
-                    }, 5000);
-                }, 2000);
-            });
-            
-            // Helper functions
-            function validateEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
-            
-            function showStatus(element, message, type) {
-                element.textContent = message;
-                element.className = 'status-message ' + type;
-                element.style.display = 'block';
             }
         });
+
+        document.querySelectorAll('.icon-footer').forEach(icon => {
+            icon.addEventListener('click', function (e) {
+                this.classList.toggle('active');
+                // Remove active class from all icons
+                document.querySelectorAll('.icon-footer').forEach(i => i.classList.remove('active'));
+                // Add active class to clicked icon
+                this.classList.add('active');
+                // Optionally: let link open (default)
+            });
+        });
+
+        // Subscribe form
+        const subscribeBtn = document.getElementById('subscribe-btn');
+        const subscribeEmail = document.getElementById('subscribe-email');
+        const subscribeStatus = document.getElementById('subscribe-status');
+        const subscribeSpinner = document.getElementById('subscribe-spinner');
+        
+        subscribeBtn.addEventListener('click', function() {
+            const email = subscribeEmail.value;
+            
+            if (!validateEmail(email)) {
+                showStatus(subscribeStatus, 'Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Show loading spinner
+            subscribeSpinner.style.display = 'block';
+            subscribeBtn.disabled = true;
+            
+            // Simulate backend API call
+            setTimeout(() => {
+                // Hide spinner
+                subscribeSpinner.style.display = 'none';
+                subscribeBtn.disabled = false;
+                
+                // Simulate subscription success
+                showStatus(subscribeStatus, 'Thank you for subscribing!', 'success');
+                subscribeEmail.value = '';
+                
+                // Hide status message after 3 seconds
+                setTimeout(() => {
+                    subscribeStatus.style.display = 'none';
+                }, 3000);
+            }, 1500);
+        });
+        
+        // Contact form
+        const contactForm = document.getElementById('contact-form');
+        const contactStatus = document.getElementById('contact-status');
+        const contactSpinner = document.getElementById('contact-spinner');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !subject || !message) {
+                showStatus(contactStatus, 'Please fill in all fields', 'error');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                showStatus(contactStatus, 'Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Show loading spinner
+            contactSpinner.style.display = 'block';
+            document.querySelector('.submit-btn').disabled = true;
+            
+            // Simulate backend API call
+            setTimeout(() => {
+                // Hide spinner
+                contactSpinner.style.display = 'none';
+                document.querySelector('.submit-btn').disabled = false;
+                
+                // Simulate form submission success
+                showStatus(contactStatus, 'Thank you for your message! We will get back to you soon.', 'success');
+                contactForm.reset();
+                
+                // Hide status message after 5 seconds
+                setTimeout(() => {
+                    contactStatus.style.display = 'none';
+                }, 5000);
+            }, 2000);
+        });
+        
+        // Helper functions
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function showStatus(element, message, type) {
+            element.textContent = message;
+            element.className = 'status-message ' + type;
+            element.style.display = 'block';
+        }    
     </script>
 </body>
 </html>
